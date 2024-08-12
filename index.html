@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planner</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+  <!-- swiper js link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- custom css link -->
+  <link rel="stylesheet" href="css/index.css">
+  <!-- Remix Icon Link -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar bg-gray-900 border-gray-700">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <!-- Logo and Brand Name -->
+      <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="img/Bridal Dress.png" class="h-8" alt="Bridal Logo">
+      </a>
+
+      <!-- User Menu and Sign In Button -->
+      <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button type="button" class="flex text-sm bg-gray-900 rounded-full md:me-0 focus:ring-4 focus:ring-gray-600"
+          id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+          data-dropdown-placement="bottom">
+          <span class="sr-only">Open user menu</span>
+
+          <img class="w-12 h-12 rounded-full mr-5 d-none" src="https://images5.alphacoders.com/520/thumb-350-520921.jpg"
+            id="user_img" alt="photo">
+        </button>
+        <a href="./auth/login/index.html" id="login_link"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-20 h-10">Sign
+          In</a>
+
+        <!-- Dropdown menu -->
+        <div class="hidden my-4 text-base list-none bg-gray-900 divide-y divide-gray-700 rounded-lg shadow"
+          id="user-dropdown">
+          <div class="flex items-center p-4 bg-gray-900 rounded-lg shadow">
+            <a href="./profile/index.html" class="flex-shrink-0">
+              <img class="w-12 h-12 rounded-full" src="https://images5.alphacoders.com/520/thumb-350-520921.jpg"
+                id="user_img" alt="photo">
+            </a>
+            <div class="ml-4">
+              <span id="user_name" class="block text-sm font-medium text-white">User Name</span>
+              <span id="email" class="block text-sm text-gray-400">user@example.com</span>
+            </div>
+            <button type="button"
+              class="ml-auto p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600">
+              <span class="sr-only">User settings</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-1-11h2v2h-2V9zm0 4h2v4h-2v-4z" />
+              </svg>
+            </button>
+          </div>
+
+          <ul class="py-2" aria-labelledby="user-menu-button">
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Earnings</a>
+            </li>
+            <li>
+              <a href="#" id="logout_btn" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Sign
+                out</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button data-collapse-toggle="navbar-user" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+          aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+        <ul
+          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <li>
+            <a href="#"
+              class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0">Home</a>
+          </li>
+          <li id="my_events_btn">
+            <a href="create-event/index.html"
+              class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Make
+              Events</a>
+          </li>
+          <li id="make_events">
+            <a href="myEvents/index.html"
+              class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">My
+              Events</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Pricing</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="home">
+
+    <!-- Media -->
+    <div class="media-icon">
+      <a href=""><i class="uil uil-twitter"></i></a>
+      <a href=""><i class="uil uil-linkedin"></i></a>
+      <a href=""><i class="uil uil-instagram"></i></a>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper bg-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="dresses/dress11.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>EARTH</span></h1>
+            <p>Earth is the third planet from the Sun and the only astronomical object known to harbor life. It is the
+              densest planet in the Solar System and the largest of the four terrestrial planets. Earth’s atmosphere
+              consists mostly of nitrogen and oxygen. Earth’s axis of rotation is tilted with respect to its orbital
+              plane, producing seasons on Earth1</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress10.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>MOON</span></h1>
+            <p>The Moon is Earth’s only natural satellite. Its diameter is about one-quarter of Earth’s (comparable to
+              the width of Australia), making it the fifth largest satellite in the Solar System and the largest and
+              most massive relative to its parent planet. It is larger than all known dwarf planets in the Solar System
+            </p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress9.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>VENUS</span></h1>
+            <p>The temperature on Venus is extremely hot. The average surface temperature is about **864 degrees
+              Fahrenheit (462 degrees Celsius)**. That's hotter than the surface of Mercury, the planet closest to the
+              Sun! The high temperature is due to a runaway greenhouse effect caused by the thick atmosphere of carbon
+              dioxide.</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress8.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>MERCURY</span></h1>
+            <p>During the day, temperatures on the surface can reach 800 degrees Fahrenheit (430 degrees Celsius).
+              Because the planet has no atmosphere to retain that heat, nighttime temperatures on the surface can drop
+              to minus 290 degrees</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress6.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>SUN</span></h1>
+            <p>The temperature of the sun varies from around 27 million degrees Fahrenheit (15 million degrees Celsius)
+              at the core to only about 10,000 degrees F (5,500 degrees C) at the surface1. The Sun has a temperature
+              ranging from 6,000° Celsius at its surface which is hot enough to turn gold, tungsten and every metal on
+              Earth into gas</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress4.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>MARS</span></h1>
+            <p>On average, the temperature on Mars is about minus 80 degrees F (minus 60 degrees Celsius) according to
+              NASA. In winter, near the poles, temperatures can get down to minus 195 degrees F (minus 125 degrees C)
+            </p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress.jpg" />
+          <div class="text-content">
+            <h1 class="title Jupiter">The <span>JUPITER</span></h1>
+            <p>From an average distance of 484 million miles (778 million kilometers), Jupiter is 5.2 astronomical units
+              away from the Sun. With an average temperature of minus 234 degrees Fahrenheit (minus 145 degrees
+              Celsius), Jupiter is frigid even in its warmest weather</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress15.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>SATURN</span></h1>
+            <p>Saturn is nine and a half times farther from the sun than Earth, with an average distance of 886 million
+              miles (1.4 billion kilometers) On the surface, Saturn’s average temperature varies from about minus 185
+              degrees Celsius (minus 300 degrees Fahrenheit) to minus 122 C (minus 188 F).</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/dress14.jpg" />
+          <div class="text-content">
+            <h1 class="title">The <span>URANUS</span></h1>
+            <p>The distance between Earth and Uranus changes daily because the solar system is in constant motion. The
+              closest the two get is 1.6 billion miles (2.6 billion kilometers). On the surface, Uranus' temperature is
+              **minus 197 degrees Celsius (minus 322 degrees Fahrenheit)**. I hope that helps!</p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="dresses/woman leaning on wall.jpeg" />
+          <div class="text-content">
+            <h1 class="title">The <span>NEPTUNE</span></h1>
+            <p>When Neptune is closest to our planet, it is at a distance of 2.7 billion miles. When it is at its
+              farthest from Earth, 2.8 billion miles lie between the two planets. The temperature at Neptune’s “surface”
+              is approximately minus 346 F (minus 201 C). The planet’s average temperature is minus 353 F (minus 214 C)
+            </p>
+            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-slider-thumbs">
+      <div class="swiper-wrapper thumbs-container">
+        <img src="dresses/dress11.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress10.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress9.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress8.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress6.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress4.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress15.jpg" class="swiper-slide" alt="">
+        <img src="dresses/dress14.jpg" class="swiper-slide" alt="">
+        <img src="dresses/woman leaning on wall.jpeg" class="swiper-slide" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="py-10 my-10">
+    <h1 class="text-center py-10 text-3xl font-bold text-white">Welcome To Events Section</h1>
+  </div>
+
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold mb-8 text-center">Products</h1>
+    <div id="events_cards_container" class="events-carousel-container">
+      <!-- Event cards will be inserted here -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="app.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In</title>
+    <!-- flow bite link -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- custom css link -->
+     <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body class="dark">
+    <form id="login_form" class="mt-10 max-w-md mx-auto">
+        <div class="input-field">
+            <input type="email" name="floating_email" id="floating_email" placeholder=" " required autocomplete="off" />
+            <label for="floating_email">Email address</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="floating_password" id="floating_password" placeholder=" " required autocomplete="off" />
+            <label for="floating_password">Password</label>
+        </div>
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</button>
+        <div class="mt-5 text-center">
+            <p class="text-gray-400">If you want to create an account</p>
+            <a href="../signup/index.html" class="text-blue-500 hover:text-blue-700">Sign Up</a>
+        </div>
+    </form>
+    <script src="app.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>

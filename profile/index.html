@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- User Profile Section -->
+<div class="bg-gray-800 h-full text-white my-12 m-auto p-4 rounded-lg shadow-lg w-64">
+    <div class="flex items-center space-x-4">
+      <button type="button" id="profile-button" class="flex items-center space-x-4 focus:outline-none">
+        <img class="w-12 h-12 rounded-full" src="https://images5.alphacoders.com/520/thumb-350-520921.jpg" id="user_img" alt="photo">
+        <div>
+          <h2 id="user_name" class="text-lg font-semibold">Bonnie Green</h2>
+          <p id="email" class="text-sm text-gray-400">name@flowbite.com</p>
+          <p class="text-sm text-green-500">Sync is on</p>
+        </div>
+      </button>
+      <button class="ml-auto p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600">
+        <span class="sr-only">User settings</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-1-11h2v2h-2V9zm0 4h2v4h-2v-4z"/>
+        </svg>
+      </button>
+    </div>
+  
+ <!-- Modal -->
+<div id="profileModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
+      <h2 class="text-xl font-semibold mb-4 text-white">Edit Profile</h2>
+      <form id="profileForm">
+        <div class="mb-4">
+          <label for="profileImage" class="block text-sm font-medium text-gray-300">Profile Image</label>
+          <input type="file" id="profileImage" name="profileImage" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-700 file:text-gray-300 hover:file:bg-gray-600">
+        </div>
+        <div class="mb-4">
+          <label for="profileName" class="block text-sm font-medium text-gray-300">Name</label>
+          <input type="text" id="profileName" name="profileName" class="mt-1 block w-full border border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white sm:text-sm">
+        </div>
+        <div class="flex justify-end space-x-2">
+          <button type="button" id="cancelButton" class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

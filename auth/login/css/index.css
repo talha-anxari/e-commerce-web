@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a202c; /* Dark background color */
+}
+#login_form {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Padding */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+.input-field {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.input-field input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    color: white;
+    outline: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+.input-field input:focus {
+    background: rgba(255, 255, 255, 0.3); /* Change background on focus */
+    border-color: #90cdf4; /* Change border color on focus */
+}
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7); /* Label color */
+    pointer-events: none;
+    transition: top 0.3s, left 0.3s, transform 0.3s, font-size 0.3s;
+}
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    top: -0.75rem;
+    left: 0.5rem;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: #90cdf4; /* Change label color on focus */
+}
