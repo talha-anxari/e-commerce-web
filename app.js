@@ -102,11 +102,13 @@ async function getAllEvents() {
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">${title}</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">${description}</p>
+            <div class='date-time'>
             <p class="mb-3 font-normal text-gray-700">${date}</p>
             <p class="mb-3 font-normal text-gray-700">${time}</p>
+            </div>
             <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">${location}</h6>
             <p class="mb-3 font-normal text-gray-700">${createByEmail}</p>
-            <button id="${doc.id}" onclick="likeEvent(this)" type="button" class="text-white bg-gray-300 hover:bg-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-300 dark:hover:bg-gray-400 dark:focus:ring-gray-700 dark:border-gray-700 flex items-center justify-center">
+            <button id="${doc.id}" onclick="likeEvent(this)" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center">
               ${auth?.currentUser && event?.likes?.includes(auth?.currentUser.uid) ? 'Liked' : 'Like'}
               ${event?.likes?.length ? event?.likes?.length : ''}
             </button>
@@ -211,4 +213,11 @@ menuBtn.addEventListener("click", () =>{
 });
 closeBtn.addEventListener("click", () =>{
   navigation.classList.remove("active");
+});
+
+
+lightbox.option({
+  resizeDuration: 200,
+  wrapAround: true,
+  disableScrolling: true,
 });
